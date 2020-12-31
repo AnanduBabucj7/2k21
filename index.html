@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f1c283d95c.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Megrim|Nova+Square|Iceland&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +16,14 @@
             height: 100vh;
             background-color: #99738e;
         }
-        .container{
+        #container{
             width: 100%;
             min-height: 80vh;
             display: flex;
             flex-flow: column;
             align-items: center;
             font-family: Comfortaa;
-            background-color:#5cdb95 ;
+            background-color:#ac3b61 ;
         }
         header{
             width: 100%;
@@ -30,10 +32,32 @@
             align-items: center;
             height: 10vh;
             padding: 20px 0px;
-            background-color:#05386b ;
+            background-color:#123c69;
             color: #f64c72;
             text-shadow: 2px -2px 3px #5cdb95 ;
             letter-spacing: 20px;
+        }
+        #year{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column;
+            background-color:#ff652f ;
+            align-items: center;
+            font-family: Comfortaa;
+        }
+        #wishes{
+            width: 70%;
+            margin: 40px;
+            padding: 40px;
+            min-height: 80vh;
+            display: none;
+            flex-flow: column;
+            background-color: #f64c72;
+            align-items: center;
+            font-family: Comfortaa;
+            border-radius: 30px;
+            justify-content: space-between;
         }
         main{
             width: 100%;
@@ -46,7 +70,8 @@
         p{
             font-size: 100px;
             color: #05386b;
-            font-family: Megrim;
+            font-family: Carter One;
+            text-shadow:5px 5px #f64c72;
         }
         p span{
             animation: showyr 5s linear infinite forwards;
@@ -55,59 +80,95 @@
             0%{
             opacity: 0;	
 	        transform: rotateY(90deg);
-	        filter: blur(15px);	
+	        filter: blur(25px);	
 	        }
-	    25%{color: red;}
-	    35%{color: orange;}
-	    50%{color: blue;}
-        65%{color: yellow;}
-	    75%{color: green;}
-	    85%{color: indigo;}
-	    100%{
-	        opacity: 1;	
-	        transform: rotateY(0deg);
-	        filter: blur(0);	
+	        25%{color: red;}
+	        35%{color: orange;}
+	        50%{color: blue;}
+            65%{color: yellow;}
+	        75%{color: green;}
+	        85%{color: indigo;}
+	        100%{
+	            opacity: 1;	
+	            transform: rotateY(0deg);
+	            filter: blur(0);	
 	        }
         }
         p span:nth-child(1){
-	        animation-delay: 0.2s;
-        }
-        p span:nth-child(2){
-	        animation-delay: 0.4s;
-        }
-        p span:nth-child(3){
 	        animation-delay: 0.6s;
         }
-        p span:nth-child(4){
-	        animation-delay: 0.8s;
+        p span:nth-child(2){
+	        animation-delay: 1s;
         }
-        .y2021{
-            /* display: none; */
-            color: #05386b;
-            text-shadow:5px 5px #f64c72;
+        p span:nth-child(3){
+	        animation-delay: 1.4s;
+        }
+        p span:nth-child(4){
+	        animation-delay: 1.8s;
         }
         button{
             height: 100px;
             width: 100px;
+            margin: 20px;
             border-radius: 50%;
             bottom: 10px;
+            color:aliceblue;
+            font-size: 20px;
+            font-family:Comfortaa ;
             background-color: #f64c72;
             border: 5px solid #05386b;
         }
+        button:hover{
+            color: #05386b;
+            background-color: aliceblue;
+            transition: 2s;
+        }
+        .wish{
+            font-size: 100%;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            font-family: Comfortaa;
+        }
+        i{
+            color:#05386b;
+        }
+        .profiles{
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            margin: 30px;
+        }
+        .profiles i{
+            color: aliceblue;
+            border: 2px solid #05386b;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 1s;
+        }
+        .profiles i:hover{
+            color: blueviolet;
+        }
     </style>
+    <script>
+        function showwish(){
+            document.getElementById("year").style.display = "none";
+            document.getElementById("wishes").style.display = "flex";
+
+        }
+        function toggle(){
+            document.getElementById("wishes").style.display = "none";
+            document.getElementById("year").style.display = "flex";
+       }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div id="container">
+        <div id="year">
+            <header>
             <h1>WELcome</h1>
         </header>
         <main>
-            <p class="y2020">
-                <span>2</span>
-                <span>0</span>
-                <span>2</span>
-                <span>0</span>
-            </p>
             <p class="y2021">
                 <span>2</span>
                 <span>k</span>
@@ -115,7 +176,32 @@
                 <span>1</span>
             </p>
             <button onclick="showwish()">wishes</button>
+            <div style="color:aliceblue;">
+                By<br>
+                Anandu Babu
+            </div>
         </main>
+        </div>
+        <div id="wishes">
+            <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+            <p class="wish">If you divide 2020 by 5, you get 404.
+                 So it was basically just been an ERROR message</p>
+                 <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+                 <p class="wish">The New Year has brought another chance for us to set things 
+                     right and to open up a new chapter in our lives.</p>
+                     <div class="profiles">
+                         <a href="http://twitter.com/Anandu_Babu_" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a href="http://www.linkedin.com/in/anandu-babu-dreamdare
+                        " target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                    </a>
+                     </div>
+                     <button onclick="toggle()">
+                go back
+            </button>
+        </div>
     </div>
 </body>
 </html>
